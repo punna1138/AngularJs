@@ -1,7 +1,7 @@
 
 var myApp = angular.module('myModule',[]);
 
-myApp.controller('myController',function($scope){
+myApp.controller('myController',function($scope,stringService){
     var employee = {
         firstName: "Punna Rao B",
         lastName: "Batthula",
@@ -66,4 +66,16 @@ myApp.controller('myController',function($scope){
     $scope.eamanies = eamanies;
     $scope.employee = employee
     $scope.message = "We Are EamaniTech Pvt Ltd Developer.....!!!"
+    $scope.transformString = function(input) {
+        $scope.output = stringService.processString(input);
+    }
 });
+
+/*
+var myApp = angular
+    .module('customServiceApp',[])
+    .controller('customController',function($custom,stringService){
+    $custom.transformString = function(input){
+        $custom.output = stringService.processString(input);
+    }
+});*/
